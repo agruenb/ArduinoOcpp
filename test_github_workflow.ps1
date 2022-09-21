@@ -1,4 +1,3 @@
-ls
-git add .;
-git commit -m "workflow test";
-git push;
+git add .
+git commit -m "workflow test"
+git push
