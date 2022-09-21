@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-      name: Compile catch2
+    - name: Compile catch2
       run: g++ -Wall test/unitTests/unitTestsMain.cpp test/unitTests/exampleCheckNumbers.cpp -o test/compiledTests
     - name: test 2
       run: ./test/compiledTests
