@@ -1,0 +1,23 @@
+name: Unit tests
+
+on:
+  push:
+    branches:
+      - test-integration
+
+jobs:
+  compile-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        example: [examples/ESP/main.cpp, examples/ESP-TLS/main.cpp, examples/SECC/main.cpp]
+        include:
+          - example: examples/SECC/main.cpp
+            dashboard-extra: --lib="/tmp/tzapu/WiFiManager"
+
+    steps:
+    - name: Compile catch2
+    - uses: actions/checkout@v3
+    - run: g++ -Wall test/unitTests/unitTestsMain.cpp test/unitTests/exampleCheckNumbers.cpp -o test/compiledTests
+    - run: ./test/compiledTests
