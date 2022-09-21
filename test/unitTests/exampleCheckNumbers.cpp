@@ -6,7 +6,6 @@ int Factorial( int number ) {
 }
 
 TEST_CASE( "2: Factorials of 1 and higher are computed (pass)", "[multi-file:2]" ) {
-    REQUIRE( Factorial(0) == 1 );
     REQUIRE( Factorial(1) == 1 );
     REQUIRE( Factorial(2) == 2 );
     REQUIRE( Factorial(3) == 6 );

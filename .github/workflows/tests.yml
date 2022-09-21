@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Check out repository code
       uses: actions/checkout@v3
-    - name: Compile catch2
+    - name: Compile tests
       run: g++ -Wall test/unitTests/unitTestsMain.cpp test/unitTests/exampleCheckNumbers.cpp -o test/compiledTests
-    - name: test 2
+    - name: Run tests
       run: ./test/compiledTests
