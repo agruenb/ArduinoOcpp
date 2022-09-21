@@ -9,13 +9,6 @@ jobs:
   compile-tests:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        example: [examples/ESP/main.cpp, examples/ESP-TLS/main.cpp, examples/SECC/main.cpp]
-        include:
-          - example: examples/SECC/main.cpp
-            dashboard-extra: --lib="/tmp/tzapu/WiFiManager"
-
     steps:
     - name: Compile catch2
     - uses: actions/checkout@v3
